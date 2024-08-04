@@ -180,6 +180,9 @@ func main() {
 
 		w.Header().Set("Content-Type", obj.ContentType)
 		w.Header().Set("ETag", obj.Etag)
+		// set cors header
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
 		http.ServeContent(w, r, pageName, obj.UpdateTime, bytes.NewReader(obj.Content))
 	})
 
