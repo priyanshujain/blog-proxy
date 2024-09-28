@@ -186,7 +186,7 @@ func main() {
 		http.ServeContent(w, r, pageName, obj.UpdateTime, bytes.NewReader(obj.Content))
 	})
 
-	err = http.ListenAndServe(":8080", router)
+	err = http.ListenAndServe(":9080", router)
 	if err != nil {
 		fatalf("http server failed: %+v", err)
 	}
